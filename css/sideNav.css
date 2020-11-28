@@ -99,3 +99,167 @@
     display: inline-block;
   }
 }
+.progress {
+  background: rgba(255,255,255,0.1);
+  justify-content: flex-start;
+  border-radius: 100px;
+  align-items: center;
+  position: relative;
+  padding: 0 5px;
+  display: flex;
+  height: 40px;
+  width: 500px;
+}
+
+.css3-value {
+  animation: css 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes css {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+.html5-value {
+  animation: html 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes html {
+  0% { width: 0; }
+  100% { width: 85%; }
+}
+
+.javascript-value {
+  animation: javascript 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes javascript {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+
+.jquery-value {
+  animation: jquery 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes jquery {
+  0% { width: 0; }
+  100% { width: 65%; }
+}
+
+.php-value {
+  animation: php 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes php {
+  0% { width: 0; }
+  100% { width: 75%; }
+}
+
+.laravel-value {
+  animation: laravel 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes laravel {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+
+.spring-value {
+  animation: spring 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes spring {
+  0% { width: 0; }
+  100% { width: 87%; }
+}
+
+.python-value {
+  animation: python 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes python {
+  0% { width: 0; }
+  100% { width: 65%; }
+}
+
+.java-value {
+  animation: java 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes java {
+  0% { width: 0; }
+  100% { width: 80%; }
+}
+
+.git-value {
+  animation: git 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes git {
+  0% { width: 0; }
+  100% { width: 70%; }
+}
+
+.angular-value {
+  animation: angular 3s normal forwards;
+  box-shadow: 0 10px 40px -10px chocolate;
+  border-radius: 100px;
+  background: chocolate;
+  height: 30px;
+  width: 0;
+}
+
+@keyframes angular {
+  0% { width: 0; }
+  100% { width: 80%; }
+}
