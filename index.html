@@ -1,423 +1,708 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Bouigrouane Portfolio | FullStack Developer</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/timeLine.css">
-        <script src="https://unpkg.com/scrollreveal"></script>
-        <link rel="stylesheet" href="css/sideNav.css">
-        <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-        <script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
-        <link
-          rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        <link
-          rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-          crossorigin="anonymous"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    </head>
-    <body>
-      <header id="nav-bar"  style="display: inline-flex; max-width: 100%;">
-            <a href="#" class="logo" style="font: normal 36px 'Cookie', cursive;" >Portfolio</a>
-                 <button id="toggle"onclick="openNav()"
-                class="navbar-toggler"
-                type="button"
-              >
-                <i class="fa fa-bars" aria-hidden="true"></i>
-              </button>
-              <div id="nav-desktop">
-            <ul>
-                <li class="service-box"><a href="#home"> Home</a></li>
-                <li class="service-box"><a href="#about"> About</a></li>
-                <li class="service-box"><a href="#service"> Services</a></li>
-                <li class="service-box"><a href="#work"> Work</a></li>
-                <li class="service-box"><a href="#review"> Review</a></li>
-                <li class="service-box"><a href="#contact"> Contact</a></li>
-            </ul>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bouigrouane Hamza — Ingénieur Développeur Java / Python</title>
+  <meta name="description" content="Ingénieur développeur Java / Python, 4 ans d'expérience. APIs sécurisées à fort trafic (50 000+ utilisateurs), architecture microservices, data science et agents IA." />
+  <meta name="author" content="Bouigrouane Hamza" />
+  <meta name="theme-color" content="#080b11" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bouigrouane Hamza — Ingénieur Développeur Java / Python" />
+  <meta property="og:description" content="APIs sécurisées à fort trafic, architecture microservices, data science et agents IA." />
+  <meta property="og:image" content="image/ma photo1.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#home" class="nav__logo">
+        <span class="nav__mark">HB</span>
+        <span>
+          Hamza Bouigrouane
+          <em data-l="fr">Ingénieur Java / Python</em>
+          <em data-l="en">Java / Python Engineer</em>
+        </span>
+      </a>
+
+      <nav class="nav__links" id="navLinks">
+        <a href="#about"><span data-l="fr">À propos</span><span data-l="en">About</span></a>
+        <a href="#skills"><span data-l="fr">Compétences</span><span data-l="en">Skills</span></a>
+        <a href="#experience"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></a>
+        <a href="#projects"><span data-l="fr">Projets</span><span data-l="en">Projects</span></a>
+        <a href="#education"><span data-l="fr">Formation</span><span data-l="en">Education</span></a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Langue / Language">
+        <button type="button" data-set-lang="fr" class="is-on">FR</button>
+        <button type="button" data-set-lang="en">EN</button>
+      </div>
+
+      <button class="burger" id="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i></button>
+    </div>
+  </header>
+
+  <div class="drawer" id="drawer">
+    <a href="#about"><span data-l="fr">À propos</span><span data-l="en">About</span></a>
+    <a href="#skills"><span data-l="fr">Compétences</span><span data-l="en">Skills</span></a>
+    <a href="#experience"><span data-l="fr">Expérience</span><span data-l="en">Experience</span></a>
+    <a href="#projects"><span data-l="fr">Projets</span><span data-l="en">Projects</span></a>
+    <a href="#education"><span data-l="fr">Formation</span><span data-l="en">Education</span></a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+
+    <!-- ============ HÉRO ============ -->
+    <section class="hero" id="home">
+      <div class="hero__bg"></div>
+      <div class="hero__grid"></div>
+
+      <div class="wrap">
+        <span class="hero__badge">
+          <span class="dot"></span>
+          <span data-l="fr">Marrakech, Maroc — ouvert aux opportunités</span>
+          <span data-l="en">Marrakech, Morocco — open to opportunities</span>
+        </span>
+
+        <h1 class="hero__name">
+          Bouigrouane <span class="grad">Hamza</span>
+        </h1>
+
+        <p class="hero__role">
+          <span data-l="fr">Ingénieur Développeur Java / Python — Confirmé</span>
+          <span data-l="en">Java / Python Software Engineer — Mid-Senior</span>
+        </p>
+
+        <p class="hero__pitch">
+          <span data-l="fr">Je conçois des APIs sécurisées à fort trafic et des architectures microservices. Une seconde casquette en data science et en intégration d'agents IA me permet d'automatiser des processus métier de bout en bout.</span>
+          <span data-l="en">I design secure, high-traffic APIs and microservice architectures. A second background in data science and AI agent integration lets me automate business processes end to end.</span>
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="mailto:bouigrouanehamza@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+            <span data-l="fr">Me contacter</span><span data-l="en">Get in touch</span>
+          </a>
+
+          <a class="btn btn--ghost" href="CV_Bouigrouane_Hamza.pdf" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
+            <span data-l="fr">Télécharger le CV</span><span data-l="en">Download CV</span>
+          </a>
+
+          <a class="icon-btn" href="https://github.com/hamzashadeau" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C17.5 5 18.5 5.3 18.5 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+          </a>
+
+          <a class="icon-btn" href="https://www.linkedin.com/in/hamza-bouigrouane" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.7 3.7 0 0 1 3.4-1.8c3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-.9-.8-1.7-1.8-1.7z"/></svg>
+          </a>
         </div>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a class="service-box" href="#home">Home</a>
-                <a class="service-box" href="#about">About</a>
-                <a class="service-box" href="#service">Services </a>
-                <a class="service-box" href="#work">Work </a>
-                <a class="service-box" href="#review">Review</a>
-                <a class="service-box" href="#contact">Contact</a>
+
+        <div class="stats reveal">
+          <div class="stat">
+            <b>4+</b>
+            <span data-l="fr">ans d'expérience</span><span data-l="en">years of experience</span>
+          </div>
+          <div class="stat">
+            <b>50 000+</b>
+            <span data-l="fr">utilisateurs servis par mes APIs</span><span data-l="en">users served by my APIs</span>
+          </div>
+          <div class="stat">
+            <b>−40 %</b>
+            <span data-l="fr">de temps de réponse SQL</span><span data-l="en">SQL response time</span>
+          </div>
+          <div class="stat">
+            <b>2</b>
+            <span data-l="fr">plateformes microservices en production</span><span data-l="en">microservice platforms in production</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ À PROPOS ============ -->
+    <section class="section section--alt" id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">À propos</span><span data-l="en">About</span></span>
+          <h2 class="section-title">
+            <span data-l="fr">Backend d'abord, données ensuite</span>
+            <span data-l="en">Backend first, data second</span>
+          </h2>
+        </div>
+
+        <div class="about">
+          <div class="photo reveal">
+            <img src="image/ma photo1.png" alt="Bouigrouane Hamza" loading="lazy" />
+          </div>
+
+          <div class="about__body reveal">
+            <p data-l="fr">
+              Ingénieur développeur <strong>Java / Python</strong> avec <strong>4 ans d'expérience</strong>, spécialisé dans la conception d'<strong>APIs sécurisées à fort trafic</strong> (plus de 50 000 utilisateurs) et l'<strong>architecture microservices</strong>.
+            </p>
+            <p data-l="en">
+              <strong>Java / Python</strong> software engineer with <strong>4 years of experience</strong>, specialised in designing <strong>secure, high-traffic APIs</strong> (50,000+ users) and <strong>microservice architectures</strong>.
+            </p>
+
+            <p data-l="fr">
+              J'apporte une expérience complémentaire en <strong>data science</strong> — modèles prédictifs, pipelines ETL — et en <strong>intégration d'agents IA</strong> pour l'automatisation de processus métier. Concrètement : sécuriser une API avec OAuth2 et Keycloak, faire dialoguer des services via Kafka et OpenFeign, industrialiser un déploiement sur Kubernetes, puis brancher un modèle Python de prévision sur les mêmes données.
+            </p>
+            <p data-l="en">
+              I bring a complementary background in <strong>data science</strong> — predictive models, ETL pipelines — and in <strong>AI agent integration</strong> for business process automation. In practice: securing an API with OAuth2 and Keycloak, wiring services together over Kafka and OpenFeign, industrialising a Kubernetes deployment, then plugging a Python forecasting model into the very same data.
+            </p>
+
+            <p data-l="fr">
+              Je travaille en <strong>Agile / Scrum</strong>, avec revues de code quotidiennes, tests unitaires (JUnit, pytest) et logging centralisé sur la stack ELK.
+            </p>
+            <p data-l="en">
+              I work in <strong>Agile / Scrum</strong>, with daily code reviews, unit testing (JUnit, pytest) and centralised logging on the ELK stack.
+            </p>
+
+            <div class="langs">
+              <h4><span data-l="fr">Langues</span><span data-l="en">Languages</span></h4>
+
+              <div class="lang-row">
+                <div class="top">
+                  <b data-l="fr">Arabe</b><b data-l="en">Arabic</b>
+                  <span data-l="fr">Langue maternelle</span><span data-l="en">Native</span>
+                </div>
+                <div class="bar"><i style="--v: 100%"></i></div>
               </div>
-        </header>
-        <section class="banner" id="home" style="position: relative;">
-            <div class="textBx">
-                 <h2>Hello, I'm <br><span>Hamza Bouigrouane</span></h2>
-                 <h3 style="text-align: center;">FullStack Developer</h3>
+
+              <div class="lang-row">
+                <div class="top">
+                  <b data-l="fr">Français</b><b data-l="en">French</b>
+                  <span data-l="fr">Compétence professionnelle complète</span><span data-l="en">Full professional proficiency</span>
                 </div>
-        </section>
-        <section class="about" id="about">
-            <hr>
-            <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  About <strong>Me</strong></span></h1>
-            <hr>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 image-anim">
-                        <img src="image/ma photo1.png" class="img" height="350px">
-                    </div>
-                <div class="col-md-6 headline">
-                    <h3> I'm a FullStack Developer</h3>
-                    <p>I have been working in web development since 2019, the period during which I have worked in different environments, and in defferents projects. I am a self-motivated and self-taught professional who likes to solve informatique problems. I merge a passion for usability and user experience with technical knowledge to create cool digital experiences. My repertoire includes programming languages and tools such as AngularJS, springboot, PHP, NodeJS,Python, MySQL, javaScript,mongoDB, and wampserver configuration, Bootstrap, jQuery, and more.
-                    </p>
-                    <p><strong>linkdin compte:</strong> 
-                      <div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="fr_FR" data-type="horizontal" data-theme="dark" data-vanity="hamza-shadeau-a657b01a1"><a class="LI-simple-link" href='https://ma.linkedin.com/in/hamza-shadeau-a657b01a1?trk=profile-badge'>hamza shadeau</a></div> 
-                    </p>
+                <div class="bar"><i style="--v: 92%"></i></div>
+              </div>
+
+              <div class="lang-row">
+                <div class="top">
+                  <b data-l="fr">Anglais</b><b data-l="en">English</b>
+                  <span data-l="fr">Bonne maîtrise</span><span data-l="en">Good command</span>
                 </div>
+                <div class="bar"><i style="--v: 75%"></i></div>
+              </div>
             </div>
-            </div>
-        </section>
-        <section class="services" id="service">
-                <hr>
-                <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  Our <strong>Services</strong></span></h1>
-                <hr>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-1"></div>
-                <div class="col-md-3 servicesBx headline">
-                    <img src="image/ecommerce-icone.png" width="128" height="128">
-                    <h2>ecommerce Site</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <br>
-            <div class="col-md-1"></div>
-                <div class="col-md-3 servicesBx top">
-                    <img src="image/portfolio-icone.png" width="128" height="128">
-                    <h2>professional Portfolio</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <br>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 servicesBx image-anim">
-                    <img src="image/blog-icone.png" width="128" height="128">
-                    <h2>blog site</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+          </div>
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-1"></div>
-            <div class="col-md-3 servicesBx headline">
-                    <img src="image/dashboard-icone.png" width="128" height="128">
-                    <h2>Dashboard</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <br>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 servicesBx top">
-                    <img src="image/learning-icone.png" width="128" height="128">
-                    <h2>e-learning site</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <br>
-                <div class="col-md-1"></div>
-                <div class="col-md-3 servicesBx image-anim">
-                    <img src="image/icon6.png" width="128" height="128">
-                    <h2>Video Editing</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                </div>
-            </div>
+      </div>
+    </section>
+
+    <!-- ============ COMPÉTENCES ============ -->
+    <section class="section" id="skills">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">Stack</span><span data-l="en">Stack</span></span>
+          <h2 class="section-title">
+            <span data-l="fr">Compétences techniques</span>
+            <span data-l="en">Technical skills</span>
+          </h2>
+          <p class="section-sub">
+            <span data-l="fr">Les technologies que j'utilise au quotidien en production, du code à la mise en service.</span>
+            <span data-l="en">The technologies I use daily in production, from code to shipping.</span>
+          </p>
         </div>
-        </section>
-        <section class="work" id="work">
-            <div class="container">
-                <hr>
-                <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  Auto-Ecole <strong>Dashboard</strong> </span></h1>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6 image-anim">
-                        <img src="image/auto Ecole.gif" class="img" height="350px">
-                    </div>
-                <div class="col-md-6 headline">
-                    <h3><strong> time: </strong> Juin2020 – Juillet2020</h3>
-                    <h4><strong>Technologies :</strong> Angular , Spring-Boot , MySQL </h3>
-                     <h4><strong> taches :</strong> crée une dashboard qui permet la gestion d’une autoécole
-                        </h3>
-                </div>
+
+        <div class="skills">
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg></div>
+            <h3><span data-l="fr">Langages</span><span data-l="en">Languages</span></h3>
+            <div class="chips">
+              <span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span>
             </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div>
+            <h3><span data-l="fr">Frameworks Java</span><span data-l="en">Java frameworks</span></h3>
+            <div class="chips">
+              <span class="chip">Spring Boot</span><span class="chip">Spring MVC</span><span class="chip">Spring Data</span>
+              <span class="chip">Spring Security</span><span class="chip">Spring Batch</span><span class="chip">Spring AI</span>
             </div>
-            <br>
-            <div class="container">
-                <hr>
-                <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  PFE <strong>HR</strong> </span></h1>
-                <hr>
-                <div class="row">
-                    <div class="col-md-6" id="mobile">
-                        <img src="image/présentation3.gif" class="img" height="350px">
-                    </div>
-                <div class="col-md-6 image-anim">
-                    <h3><strong> time: </strong> April 2020  – June 2020</h3>
-                    <h4><strong>Technologies :</strong> Angular , Spring-Boot , MySQL </h3>
-                     <h4><strong> taches :</strong> crée une Dashboard qui permet la gestion des employés (absences, grades, permanences administratives, demande des documents en ligne et génération des documents)</h3>
-                </div>
-                <div class="col-md-6 headline" id="desktop">
-                    <img src="image/présentation3.gif" class="img" height="350px">
-                </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m7 14 4-4 4 4 5-5"/></svg></div>
+            <h3><span data-l="fr">Frameworks Python</span><span data-l="en">Python frameworks</span></h3>
+            <div class="chips">
+              <span class="chip">FastAPI</span><span class="chip">Django</span><span class="chip">Flask</span><span class="chip">Streamlit</span>
+              <span class="chip">TensorFlow</span><span class="chip">Keras</span><span class="chip">Scikit-learn</span>
+              <span class="chip">NumPy</span><span class="chip">Pandas</span><span class="chip">Matplotlib</span>
             </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></div>
+            <h3><span data-l="fr">Architecture &amp; sécurité</span><span data-l="en">Architecture &amp; security</span></h3>
+            <div class="chips">
+              <span class="chip">REST</span><span class="chip">SOAP</span><span class="chip">WebSocket</span>
+              <span class="chip">Microservices</span><span class="chip">OAuth2 / JWT</span>
+              <span class="chip">Kafka</span><span class="chip">OpenFeign</span><span class="chip">Keycloak (SSO)</span>
             </div>
-            <br>
-            <div class="container">
-            <hr>
-            <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  Chiminée <strong>Entreprise</strong> </span></h1>
-            <hr>
-                <div class="row">
-                    <div class="col-md-6 image-anim">
-                        <img src="image/chiminée-video.gif" class="img" height="350px">
-                    </div>
-                <div class="col-md-6 headline">
-                    <h3><strong> time: </strong> Septembre2020 — Septembre2020</h3>
-                    <h4><strong>Technologies :</strong> HTML5, CSS3, JAVASCRIPT, JQUERY, LARAVEL </h3>
-                     <h4><strong> taches :</strong> : crée un site permet la visualisation des produits de l’entreprise avec une Dashboard de gestion et génération automatique des factures </h3>
-                </div>
-                </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="13" width="20" height="8" rx="2"/><path d="M6 7h.01M6 17h.01"/></svg></div>
+            <h3><span data-l="fr">DevOps &amp; outils</span><span data-l="en">DevOps &amp; tooling</span></h3>
+            <div class="chips">
+              <span class="chip">Docker</span><span class="chip">Kubernetes</span><span class="chip">GitLab CI</span>
+              <span class="chip">Jenkins</span><span class="chip">Git / GitHub</span><span class="chip">Linux</span><span class="chip">ELK</span>
             </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg></div>
+            <h3><span data-l="fr">Bases de données</span><span data-l="en">Databases</span></h3>
+            <div class="chips">
+              <span class="chip">PostgreSQL</span><span class="chip">MySQL / PL-SQL</span><span class="chip">MongoDB</span>
+              <span class="chip">SQL Server</span><span class="chip">Hadoop / Hive</span>
+            </div>
+          </article>
+
+          <article class="skill reveal">
+            <div class="skill__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg></div>
+            <h3><span data-l="fr">Data &amp; BI</span><span data-l="en">Data &amp; BI</span></h3>
+            <div class="chips">
+              <span class="chip">ETL (Pentaho, Talend)</span><span class="chip">Tableau</span><span class="chip">JasperSoft</span>
+              <span class="chip">RapidMiner</span><span class="chip">OLAP</span>
+              <span class="chip" data-l="fr">Statistiques</span><span class="chip" data-l="en">Statistics</span>
+            </div>
+          </article>
+
         </div>
-        </section>
-        <hr>
-        <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  The academic  <strong>track</strong></span></h1>
-        <hr>
-        <section id="timeLine" style="background-color: #202020;width: 100%;">
-            <div class="container image-anim">
-                <div class="timeline">
-                  <div class="timeline-month">
-                    septmbre, 2020
-                    <span>3 Entries</span>
-                  </div>
-                  <div class="timeline-section">
-                    <div class="timeline-date">
-                    June 2020
-                    </div>
-                  </div>
-                    <div class="row">
-                      <div class="col-sm-4">
-                        <div class="timeline-box">
-                          <div class="box-title">
-                            <i class="fa fa-asterisk text-success" aria-hidden="true"></i> LICENCE EN SYSTEME INFORMATIQUE REPARTIE
-                          </div>
-                          <div class="box-content">
-                            <div class="box-item"><strong>Etablissement :</strong> FACULTE DE SCIENCE ET TECHNIQUE</div>
-                            <div class="box-item"><strong>Date :</strong>2020</div>
-                            <div class="box-item"><strong>Mention :</strong>Assez bien</div>
-                            <div class="box-item"><strong>Moyen :</strong>12,32</div>
-                          </div>
-                          <div class="box-footer">- Tyler</div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="timeline-section">
-                        <div class="timeline-date">
-                        June 2019
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="timeline-box">
-                            <div class="box-title">
-                              <i class="fa fa-asterisk text-success" aria-hidden="true"></i> DEUST EN MATH,INFORMATIQUE,PHYSIQUE
-                            </div>
-                            <div class="box-content">
-                              <div class="box-item"><strong>Etablissement :</strong> FACULTE DE SCIENCE ET TECHNIQUE</div>
-                              <div class="box-item"><strong>Date :</strong>2019</div>
-                              <div class="box-item"><strong>Mention :</strong>Passable</div>
-                              <div class="box-item"><strong>Moyen :</strong>11,37</div>
-                            </div>
-                            <div class="box-footer">- Tyler</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="timeline-section">
-                        <div class="timeline-date">
-                        June 2017
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4">
-                          <div class="timeline-box">
-                            <div class="box-title">
-                              <i class="fa fa-asterisk text-success" aria-hidden="true"></i> BAC EN SCIENCE PHYSIQUE
-                            </div>
-                            <div class="box-content">
-                              <div class="box-item"><strong>Etablissement :</strong> Lycée Waley el Ahed</div>
-                              <div class="box-item"><strong>Date :</strong>2017</div>
-                              <div class="box-item"><strong>Mention :</strong>Bien</div>
-                              <div class="box-item"><strong>Moyen :</strong>15,58</div>
-                            </div>
-                            <div class="box-footer">- Tyler</div>
-                          </div>
-                        </div>
-                      </div>
-                  </div>
-        </section>
-        <br>
-        <hr>
-        <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  <strong>My Skills</strong></span></h1>
-        <hr>
-        <section id="Skills" style="background-color: #000;">
-    <p class="w3-wide image-anim" style="color: white;">html5</p>
-    <div class="progress image-anim">
-      <div class="html5-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">css3</p>
-    <div class="progress image-anim">
-      <div class="css3-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">javascript</p>
-    <div class="progress image-anim">
-      <div class="javascript-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">jQuery</p>
-    <div class="progress image-anim">
-      <div class="jquery-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">php</p>
-    <div class="progress image-anim">
-      <div class="php-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">laravel</p>
-    <div class="progress image-anim">
-      <div class="laravel-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">spring</p>
-    <div class="progress image-anim">
-      <div class="spring-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">python</p>
-    <div class="progress image-anim">
-      <div class="python-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">java</p>
-    <div class="progress image-anim">
-      <div class="java-value"></div>
-    </div>
-    <p class="w3-wide image-anim" style="color: white;">Git</p>
-    <div class="progress image-anim">
-      <div class="git-value"></div>
-    </div> <p class="w3-wide image-anim" style="color: white;">angular</p>
-    <div class="progress image-anim">
-      <div class="angular-value"></div>
-    </div>
-        </section>
-        <br>
-        <hr>
-        <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  <strong>review</strong></span></h1>
-        <hr>
-        <section class="review" id="review">
-            <div class="content">
-                <div class="reviewBx image-anim">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitasse platea dictumst vestibulum rhoncus est.</p>
-                    <h3>Someone Famous <br><span>Creative Designer</span></h3>
-                </div>
-                <div class="reviewBx headline">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Habitasse platea dictumst vestibulum rhoncus est.</p>
-                    <h3>Someone Famous <br><span>Creative Designer</span></h3>
-                </div>
-            </div>
-        </section>
-        <br>
-        <hr>
-        <h1 style="width: 100%;text-align: center; border-bottom: 1px solid #000; line-height: 0.1em;margin: 10px 0 20px;"> <span style=" background:#fff; padding:0 10px;">  Contact  <strong>Us</strong></span></h1>
-        <hr>
-        <section class="contact" id="contact">
-            <div class="content">
-                <div class="contactInfo">
-                    <h3>Contact Info</h3>
-                    <div class="contactInfoBx">
-                      <div class="box">
-                        <div class="icon">
-                            <i class="fa fa-map-marker"></i>
-                        </div>
-                        <div class="text image-anim">
-                            <h3>Address</h3>
-                            <p> N85 Residence molay Smail   <br> Tamansourt, <br> Maroc</p>
-                        </div>
-                      </div>
-                      <div class="box image-anim">
-                        <div class="icon">
-                            <i class="fa fa-phone"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p>+212706019991</p>
-                        </div>
-                    </div>
-                    <div class="box image-anim">
-                        <div class="icon">
-                            <i class="fa fa-envelope-o"></i>
-                        </div>
-                        <div class="text image-anim">
-                            <h3>Email</h3>
-                            <p>hbouirgouane@gmail.com</p>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                    <div class="formBx headline">
-                        <form>
-                            <h1>Message Me</h1>
-                            <input type="text" name="" placeholder="Full Name">
-                            <input type="email" name="" placeholder="Email">
-                            <textarea placeholder="your Message"></textarea>
-                            <input type="submit" value="Send">
-                        </form>
-                    </div>
-            </div>
-        </section>
-        <div class="copyright">
-            <p>Copyright © coding with <i class="fa fa-heart" aria-hidden="true"></i> By Bouigrouane</p>
+      </div>
+    </section>
+
+    <!-- ============ EXPÉRIENCE ============ -->
+    <section class="section section--alt" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">Parcours</span><span data-l="en">Career</span></span>
+          <h2 class="section-title">
+            <span data-l="fr">Expérience professionnelle</span>
+            <span data-l="en">Professional experience</span>
+          </h2>
         </div>
-        <script type="text/javascript">
-        window.addEventListener('scroll', function(){
-            var header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-        })
-        </script>
-           <script>
-            const nav = document.getElementById('nav-bar')
-            window.addEventListener('scroll',() => {
-    if(window.scrollY>500){
-        nav.classList.add('scroll');
-        nav.classList.toggle('sticky');
-    }
-});
-const sr = ScrollReveal();
-sr.reveal('.headline',{
-    origin:'top',
-    distance:'60px',
-    duration:4000
-});
-sr.reveal('.image-anim',{
-    origin:'top',
-    distance:'60px',
-    duration:4000
-});
-sr.reveal('.top',{
-    origin:'top',
-    distance:'60px',
-    duration:4000
-});
-        </script>
-        <script>
-            /* Set the width of the side navigation to 250px */
-          function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById('closeNav').style.display=inline;
-          }
-          
-          /* Set the width of the side navigation to 0 */
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById('closeNav').style.display=none;
-          }
-            </script>
-    </body>
+
+        <div class="tl">
+
+          <article class="tl__item reveal">
+            <div class="tl__top">
+              <h3 class="tl__role">
+                <span data-l="fr">Ingénieur développement logiciel</span>
+                <span data-l="en">Software Engineer</span>
+              </h3>
+              <span class="tl__date">
+                <span data-l="fr">Mars 2025 — Aujourd'hui</span>
+                <span data-l="en">March 2025 — Present</span>
+              </span>
+            </div>
+            <p class="tl__co">Efficience Développement</p>
+            <ul class="tl__list">
+              <li data-l="fr">Développement et maintenance d'applications backend en <strong>Java Spring Boot</strong> et <strong>Python FastAPI</strong>.</li>
+              <li data-l="en">Development and maintenance of backend applications in <strong>Java Spring Boot</strong> and <strong>Python FastAPI</strong>.</li>
+
+              <li data-l="fr">Conception et implémentation d'<strong>APIs REST, SOAP et WebSocket</strong> sécurisées par OAuth2 et JWT, utilisées par plus de <strong>50 000 utilisateurs</strong>.</li>
+              <li data-l="en">Design and implementation of <strong>REST, SOAP and WebSocket APIs</strong> secured with OAuth2 and JWT, used by more than <strong>50,000 users</strong>.</li>
+
+              <li data-l="fr">Optimisation des requêtes SQL, réduisant le temps de réponse de <strong>40 %</strong>.</li>
+              <li data-l="en">SQL query optimisation, cutting response time by <strong>40%</strong>.</li>
+
+              <li data-l="fr">Mise en place de pipelines <strong>CI/CD</strong> avec GitLab CI, Docker et Kubernetes ; collaboration avec les équipes frontend et DevOps en <strong>Agile / Scrum</strong>.</li>
+              <li data-l="en">Set up of <strong>CI/CD</strong> pipelines with GitLab CI, Docker and Kubernetes; collaboration with frontend and DevOps teams in <strong>Agile / Scrum</strong>.</li>
+
+              <li data-l="fr">Conception et développement d'un <strong>agent IA</strong> sur la plateforme Dosy : il guide les clients dans l'utilisation du site, identifie leurs problèmes et les transmet automatiquement à l'équipe support/dev, et assiste les administrateurs dans l'interrogation de la base de données.</li>
+              <li data-l="en">Design and development of an <strong>AI agent</strong> on the Dosy platform: it guides customers through the site, identifies their issues and forwards them automatically to the support/dev team, and assists administrators in querying the database.</li>
+
+              <li data-l="fr">Gestion des erreurs et <strong>logging centralisé</strong> avec la stack ELK (Elasticsearch, Logstash, Kibana).</li>
+              <li data-l="en">Error handling and <strong>centralised logging</strong> with the ELK stack (Elasticsearch, Logstash, Kibana).</li>
+
+              <li data-l="fr">Participation active aux revues de code quotidiennes et correction de <strong>bugs critiques en production</strong>.</li>
+              <li data-l="en">Active participation in daily code reviews and fixing of <strong>critical production bugs</strong>.</li>
+
+              <li data-l="fr">Contribution à l'amélioration des processus de développement et proposition de solutions techniques innovantes.</li>
+              <li data-l="en">Contribution to improving development processes and proposing innovative technical solutions.</li>
+            </ul>
+          </article>
+
+          <article class="tl__item reveal">
+            <div class="tl__top">
+              <h3 class="tl__role">
+                <span data-l="fr">Ingénieur data science &amp; développeur Java</span>
+                <span data-l="en">Data Science Engineer &amp; Java Developer</span>
+              </h3>
+              <span class="tl__date">
+                <span data-l="fr">Septembre 2022 — Février 2025</span>
+                <span data-l="en">September 2022 — February 2025</span>
+              </span>
+            </div>
+            <p class="tl__co">1minScript</p>
+            <ul class="tl__list">
+              <li data-l="fr">Développement de <strong>microservices</strong> en Python FastAPI et Java Spring.</li>
+              <li data-l="en">Development of <strong>microservices</strong> in Python FastAPI and Java Spring.</li>
+
+              <li data-l="fr">Intégration de bases de données <strong>PostgreSQL, MongoDB et SQL Server</strong>.</li>
+              <li data-l="en">Integration of <strong>PostgreSQL, MongoDB and SQL Server</strong> databases.</li>
+
+              <li data-l="fr">Création de scripts d'automatisation Python pour l'<strong>analyse de données</strong>.</li>
+              <li data-l="en">Python automation scripts for <strong>data analysis</strong>.</li>
+
+              <li data-l="fr">Participation aux revues de code et aux <strong>tests unitaires</strong> (JUnit, pytest).</li>
+              <li data-l="en">Participation in code reviews and <strong>unit testing</strong> (JUnit, pytest).</li>
+
+              <li data-l="fr">Documentation technique des APIs et des processus de déploiement.</li>
+              <li data-l="en">Technical documentation of APIs and deployment processes.</li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJETS ============ -->
+    <section class="section" id="projects">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">Réalisations</span><span data-l="en">Selected work</span></span>
+          <h2 class="section-title">
+            <span data-l="fr">Projets significatifs</span>
+            <span data-l="en">Significant projects</span>
+          </h2>
+          <p class="section-sub">
+            <span data-l="fr">Des plateformes en production aux travaux de recherche appliquée.</span>
+            <span data-l="en">From production platforms to applied research work.</span>
+          </p>
+        </div>
+
+        <div class="projects">
+
+          <article class="card card--feature reveal">
+            <div class="card__top">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V5"/><circle cx="12" cy="3" r="1.5"/><path d="M9 13h.01M15 13h.01"/><path d="M9 17h6"/></svg></div>
+              <span class="tag"><span data-l="fr">Agent IA</span><span data-l="en">AI agent</span></span>
+            </div>
+            <h3>
+              <span data-l="fr">Agent IA d'assistance et de support — Dosy</span>
+              <span data-l="en">AI support &amp; assistance agent — Dosy</span>
+            </h3>
+            <p class="card__meta">Efficience Développement · 2025</p>
+            <ul class="card__list">
+              <li data-l="fr">Guide les clients dans l'utilisation de la plateforme et identifie automatiquement leurs problèmes.</li>
+              <li data-l="en">Guides customers through the platform and automatically identifies their issues.</li>
+
+              <li data-l="fr">Transmet les incidents qualifiés directement à l'équipe support / développement.</li>
+              <li data-l="en">Routes qualified incidents straight to the support / development team.</li>
+
+              <li data-l="fr">Assiste les administrateurs dans l'interrogation de la base de données en langage naturel (ex. informations sur un salarié).</li>
+              <li data-l="en">Assists administrators in querying the database in natural language (e.g. employee information).</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Spring AI</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">SQL</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
+              <span class="tag"><span data-l="fr">Production</span><span data-l="en">Production</span></span>
+            </div>
+            <h3>
+              <span data-l="fr">Plateforme des dotations Dosy</span>
+              <span data-l="en">Dosy allocations platform</span>
+            </h3>
+            <p class="card__meta">
+              <span data-l="fr">Groupe RG · Java / Spring Boot</span>
+              <span data-l="en">RG Group · Java / Spring Boot</span>
+            </p>
+            <ul class="card__list">
+              <li data-l="fr">Architecture <strong>microservices</strong> générée et industrialisée avec JHipster.</li>
+              <li data-l="en"><strong>Microservice</strong> architecture generated and industrialised with JHipster.</li>
+
+              <li data-l="fr">Automatisation des chaînes <strong>ETL</strong> (extraction, transformation, chargement) via des scripts Python.</li>
+              <li data-l="en">Automation of <strong>ETL</strong> chains (extract, transform, load) through Python scripts.</li>
+
+              <li data-l="fr">Communication <strong>synchrone avec OpenFeign</strong> et <strong>asynchrone avec Kafka</strong>.</li>
+              <li data-l="en"><strong>Synchronous communication via OpenFeign</strong> and <strong>asynchronous via Kafka</strong>.</li>
+
+              <li data-l="fr">Sécurité et authentification unique (<strong>SSO</strong>) avec Keycloak.</li>
+              <li data-l="en">Security and single sign-on (<strong>SSO</strong>) with Keycloak.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Spring Boot</span><span class="chip">JHipster</span><span class="chip">Kafka</span>
+              <span class="chip">OpenFeign</span><span class="chip">Keycloak</span><span class="chip">Python</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6.3L4.6 17a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 8.3V2"/><path d="M8.5 2h7"/><path d="M7 14h10"/></svg></div>
+              <span class="tag"><span data-l="fr">Production</span><span data-l="en">Production</span></span>
+            </div>
+            <h3>
+              <span data-l="fr">Plateforme de gestion des médicaments Ethypharm</span>
+              <span data-l="en">Ethypharm medication management platform</span>
+            </h3>
+            <p class="card__meta">Java / Spring Boot · Python</p>
+            <ul class="card__list">
+              <li data-l="fr">Architecture <strong>microservices</strong> avec JHipster.</li>
+              <li data-l="en"><strong>Microservice</strong> architecture with JHipster.</li>
+
+              <li data-l="fr">Développement de <strong>modèles prédictifs</strong> Python pour l'analyse et la prévision des stocks.</li>
+              <li data-l="en">Development of Python <strong>predictive models</strong> for stock analysis and forecasting.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Spring Boot</span><span class="chip">JHipster</span>
+              <span class="chip">Scikit-learn</span><span class="chip">Pandas</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></svg></div>
+              <span class="tag"><span data-l="fr">Recherche</span><span data-l="en">Research</span></span>
+            </div>
+            <h3>
+              <span data-l="fr">Optimisation d'un modèle de classification d'images</span>
+              <span data-l="en">Image classification model optimisation</span>
+            </h3>
+            <p class="card__meta">
+              <span data-l="fr">Projet de recherche — Master</span>
+              <span data-l="en">Research project — Master's degree</span>
+            </p>
+            <ul class="card__list">
+              <li data-l="fr">Implémentation de l'algorithme métaheuristique <strong>Firefly</strong> pour l'optimisation des hyperparamètres pendant l'entraînement.</li>
+              <li data-l="en">Implementation of the <strong>Firefly</strong> metaheuristic algorithm to optimise hyperparameters during training.</li>
+
+              <li data-l="fr">Amélioration mesurée des résultats de classification par rapport à un réglage standard des paramètres.</li>
+              <li data-l="en">Measured improvement in classification results compared with standard parameter tuning.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Keras</span>
+              <span class="chip" data-l="fr">Métaheuristiques</span><span class="chip" data-l="en">Metaheuristics</span>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__top">
+              <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h2l2-9h9l3 9h2"/><circle cx="7.5" cy="19" r="2"/><circle cx="17.5" cy="19" r="2"/></svg></div>
+              <span class="tag"><span data-l="fr">Stage de fin d'études</span><span data-l="en">Final-year internship</span></span>
+            </div>
+            <h3>
+              <span data-l="fr">Optimisation de tournées de transport</span>
+              <span data-l="en">Transport route optimisation</span>
+            </h3>
+            <p class="card__meta">
+              <span data-l="fr">Timar — transport &amp; logistique</span>
+              <span data-l="en">Timar — transport &amp; logistics</span>
+            </p>
+            <ul class="card__list">
+              <li data-l="fr">Clustering <strong>K-means</strong> des points de livraison pour affecter chaque transporteur à la zone la plus proche.</li>
+              <li data-l="en"><strong>K-means</strong> clustering of delivery points to assign each carrier to the nearest zone.</li>
+
+              <li data-l="fr">Algorithmes de <strong>recherche opérationnelle</strong> (Kruskal, algorithmes gloutons) pour optimiser chaque trajet.</li>
+              <li data-l="en"><strong>Operations research</strong> algorithms (Kruskal, greedy algorithms) to optimise each route.</li>
+            </ul>
+            <div class="chips">
+              <span class="chip">Python</span><span class="chip">Scikit-learn</span>
+              <span class="chip" data-l="fr">Recherche opérationnelle</span><span class="chip" data-l="en">Operations research</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FORMATION ============ -->
+    <section class="section section--alt" id="education">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow"><span data-l="fr">Diplômes</span><span data-l="en">Degrees</span></span>
+          <h2 class="section-title">
+            <span data-l="fr">Formation</span>
+            <span data-l="en">Education</span>
+          </h2>
+        </div>
+
+        <div class="edu">
+
+          <article class="edu__item reveal">
+            <span class="edu__year">Master</span>
+            <h3>
+              <span data-l="fr">Science des Données et Aide à la Décision</span>
+              <span data-l="en">Data Science &amp; Decision Support</span>
+            </h3>
+            <p>
+              <span data-l="fr">Faculté des Sciences et Techniques — Université Cadi Ayyad, Marrakech</span>
+              <span data-l="en">Faculty of Sciences and Techniques — Cadi Ayyad University, Marrakech</span>
+            </p>
+          </article>
+
+          <article class="edu__item reveal">
+            <span class="edu__year"><span data-l="fr">Licence · 2020</span><span data-l="en">Bachelor · 2020</span></span>
+            <h3>
+              <span data-l="fr">Système Informatique Réparti</span>
+              <span data-l="en">Distributed Computer Systems</span>
+            </h3>
+            <p>
+              <span data-l="fr">Faculté des Sciences et Techniques — Université Cadi Ayyad, Marrakech</span>
+              <span data-l="en">Faculty of Sciences and Techniques — Cadi Ayyad University, Marrakech</span>
+            </p>
+          </article>
+
+          <article class="edu__item reveal">
+            <span class="edu__year"><span data-l="fr">Baccalauréat · 2017</span><span data-l="en">High school diploma · 2017</span></span>
+            <h3>
+              <span data-l="fr">Sciences Physiques</span>
+              <span data-l="en">Physical Sciences</span>
+            </h3>
+            <p>
+              <span data-l="fr">Lycée Waley El Ahd, Marrakech</span>
+              <span data-l="en">Waley El Ahd High School, Marrakech</span>
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Contact</span>
+          <h2 class="section-title">
+            <span data-l="fr">Travaillons ensemble</span>
+            <span data-l="en">Let's work together</span>
+          </h2>
+          <p class="section-sub">
+            <span data-l="fr">Un poste, une mission freelance ou simplement une question technique — écrivez-moi, je réponds sous 48 h.</span>
+            <span data-l="en">A role, a freelance assignment or just a technical question — drop me a line, I reply within 48 hours.</span>
+          </p>
+        </div>
+
+        <div class="contact">
+
+          <div class="info reveal">
+            <a class="info__row" href="mailto:bouigrouanehamza@gmail.com">
+              <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+              <span>
+                <h4>Email</h4>
+                <p>bouigrouanehamza@gmail.com</p>
+              </span>
+            </a>
+
+            <a class="info__row" href="tel:+212706019991">
+              <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+              <span>
+                <h4><span data-l="fr">Téléphone</span><span data-l="en">Phone</span></h4>
+                <p>+212 706 019 991</p>
+              </span>
+            </a>
+
+            <div class="info__row">
+              <span class="info__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+              <span>
+                <h4><span data-l="fr">Localisation</span><span data-l="en">Location</span></h4>
+                <p>N85 lot Molay Smail, Tamansourt, Marrakech</p>
+              </span>
+            </div>
+
+            <a class="info__row" href="https://www.linkedin.com/in/hamza-bouigrouane" target="_blank" rel="noopener">
+              <span class="info__ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.7 3.7 0 0 1 3.4-1.8c3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-.9-.8-1.7-1.8-1.7z"/></svg></span>
+              <span>
+                <h4>LinkedIn</h4>
+                <p>/in/hamza-bouigrouane</p>
+              </span>
+            </a>
+
+            <a class="info__row" href="https://github.com/hamzashadeau" target="_blank" rel="noopener">
+              <span class="info__ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C17.5 5 18.5 5.3 18.5 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg></span>
+              <span>
+                <h4>GitHub</h4>
+                <p>/hamzashadeau</p>
+              </span>
+            </a>
+          </div>
+
+          <form class="form reveal" id="contactForm" novalidate>
+            <div class="field">
+              <label for="cf-name"><span data-l="fr">Nom complet</span><span data-l="en">Full name</span></label>
+              <input type="text" id="cf-name" name="name" required
+                     data-ph-fr="Votre nom" data-ph-en="Your name" />
+            </div>
+
+            <div class="field">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" required
+                     data-ph-fr="vous@exemple.com" data-ph-en="you@example.com" />
+            </div>
+
+            <div class="field">
+              <label for="cf-subject"><span data-l="fr">Sujet</span><span data-l="en">Subject</span></label>
+              <input type="text" id="cf-subject" name="subject"
+                     data-ph-fr="Opportunité, mission, question…" data-ph-en="Opportunity, project, question…" />
+            </div>
+
+            <div class="field">
+              <label for="cf-msg">Message</label>
+              <textarea id="cf-msg" name="message" rows="5" required
+                        data-ph-fr="Parlez-moi de votre besoin…" data-ph-en="Tell me about your need…"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+              <span data-l="fr">Envoyer le message</span><span data-l="en">Send message</span>
+            </button>
+
+            <p class="form__note">
+              <span data-l="fr">Le formulaire ouvre votre logiciel de messagerie avec le message pré-rempli.</span>
+              <span data-l="en">The form opens your mail client with the message pre-filled.</span>
+            </p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ PIED DE PAGE ============ -->
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p>
+        <span data-l="fr">© <span id="year"></span> Bouigrouane Hamza — Ingénieur Développeur Java / Python</span>
+        <span data-l="en">© <span id="year-en"></span> Bouigrouane Hamza — Java / Python Software Engineer</span>
+      </p>
+      <div class="socials">
+        <a class="icon-btn" href="https://github.com/hamzashadeau" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.4-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.8 2.7 1.3 3.4 1 .1-.7.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.3 11.3 0 0 1 6 0C17.5 5 18.5 5.3 18.5 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6A11.5 11.5 0 0 0 23.5 12C23.5 5.7 18.3.5 12 .5z"/></svg>
+        </a>
+        <a class="icon-btn" href="https://www.linkedin.com/in/hamza-bouigrouane" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.4 20.4h-3.5v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1a3.7 3.7 0 0 1 3.4-1.8c3.6 0 4.2 2.4 4.2 5.4v6.2zM5.3 7.4a2 2 0 1 1 0-4.1 2 2 0 0 1 0 4.1zM7.1 20.4H3.6V9h3.5v11.4zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 1 .8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7c0-.9-.8-1.7-1.8-1.7z"/></svg>
+        </a>
+        <a class="icon-btn" href="mailto:bouigrouanehamza@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#home" class="icon-btn to-top" id="toTop" aria-label="Haut de page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 15-6-6-6 6"/></svg>
+  </a>
+
+  <script src="js/app.js"></script>
+</body>
 </html>
