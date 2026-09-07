@@ -460,6 +460,70 @@
               <span data-l="en">AI support &amp; assistance agent — Dosy</span>
             </h3>
             <p class="card__meta">Efficience Développement · 2025</p>
+
+            <figure class="diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 860 340" role="img" aria-labelledby="d1t d1d">
+                <title id="d1t">Architecture de l'agent IA Dosy</title>
+                <desc id="d1d">Les clients et les administrateurs interrogent l'agent IA ; celui-ci transmet les incidents qualifiés à l'équipe support et traduit les questions des administrateurs en requêtes sur la base PostgreSQL.</desc>
+
+                <defs>
+                  <marker id="d1s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+                  </marker>
+                  <marker id="d1f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--muted-2)" />
+                  </marker>
+                </defs>
+
+                <!-- entrees -->
+                <rect class="node" x="24" y="44" width="156" height="58" rx="10" />
+                <text class="lbl" x="102" y="70" text-anchor="middle">Client</text>
+                <text class="sub" x="102" y="88" text-anchor="middle">utilisateur de la plateforme</text>
+
+                <rect class="node" x="24" y="210" width="156" height="58" rx="10" />
+                <text class="lbl" x="102" y="236" text-anchor="middle">Administrateur</text>
+                <text class="sub" x="102" y="254" text-anchor="middle">équipe métier</text>
+
+                <!-- agent -->
+                <rect class="node-a" x="332" y="120" width="204" height="84" rx="12" />
+                <text class="lbl" x="434" y="156" text-anchor="middle">Agent IA</text>
+                <text class="sub" x="434" y="176" text-anchor="middle">Spring AI · Java · Python</text>
+
+                <!-- sorties -->
+                <rect class="node" x="676" y="36" width="160" height="58" rx="10" />
+                <text class="lbl" x="756" y="62" text-anchor="middle">Support / Dev</text>
+                <text class="sub" x="756" y="80" text-anchor="middle">file de tickets</text>
+
+                <rect class="node" x="676" y="228" width="160" height="58" rx="10" />
+                <text class="lbl" x="756" y="254" text-anchor="middle">PostgreSQL</text>
+                <text class="sub" x="756" y="272" text-anchor="middle">données métier</text>
+
+                <!-- liens -->
+                <path class="sync" marker-end="url(#d1s)" d="M 184 73 H 256 V 145 H 324" />
+                <text class="elbl" x="190" y="62">guidage · incident signalé</text>
+
+                <path class="sync" marker-end="url(#d1s)" d="M 184 239 H 256 V 180 H 324" />
+                <text class="elbl" x="190" y="260">question en langage naturel</text>
+
+                <!-- libelles places au-dessus des boites de destination : sur les
+                     coudes, ils etaient traverses par les segments verticaux. -->
+                <path class="sync" marker-end="url(#d1s)" d="M 540 145 H 610 V 65 H 668" />
+                <text class="elbl" x="756" y="26" text-anchor="middle">incident qualifié, routé</text>
+
+                <path class="sync" marker-end="url(#d1s)" d="M 540 180 H 610 V 257 H 668" />
+                <text class="elbl" x="756" y="218" text-anchor="middle">requête SQL générée</text>
+
+                <path class="flow" marker-end="url(#d1f)" d="M 390 208 V 300 H 102 V 108" />
+                <text class="elbl" x="200" y="292">réponse</text>
+              </svg>
+              </div>
+              <figcaption>
+                <span data-l="fr">Deux usages sur un même agent : le support client, avec routage automatique des incidents, et l'interrogation de la base en langage naturel pour les administrateurs.</span>
+                <span data-l="en">Two use cases on a single agent: customer support, with automatic incident routing, and natural-language querying of the database for administrators.</span>
+              </figcaption>
+            </figure>
+
             <ul class="card__list">
               <li data-l="fr">Guide les clients dans l'utilisation de la plateforme et identifie automatiquement leurs problèmes.</li>
               <li data-l="en">Guides customers through the platform and automatically identifies their issues.</li>
@@ -475,7 +539,7 @@
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card card--wide reveal">
             <div class="card__top">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></div>
               <span class="tag"><span data-l="fr">Production</span><span data-l="en">Production</span></span>
@@ -488,6 +552,101 @@
               <span data-l="fr">Groupe RG · Java / Spring Boot</span>
               <span data-l="en">RG Group · Java / Spring Boot</span>
             </p>
+
+            <figure class="diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 900 470" role="img" aria-labelledby="d2t d2d">
+                <title id="d2t">Architecture microservices de la plateforme Dosy</title>
+                <desc id="d2d">Le trafic entre par une passerelle protégée par Keycloak, puis atteint trois microservices Spring Boot qui échangent de façon synchrone via OpenFeign et de façon asynchrone via Kafka. Des scripts ETL Python alimentent PostgreSQL. L'ensemble tourne sur Kubernetes.</desc>
+
+                <defs>
+                  <marker id="d2s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+                  </marker>
+                  <marker id="d2a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--accent-2)" />
+                  </marker>
+                  <marker id="d2f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--muted-2)" />
+                  </marker>
+                </defs>
+
+                <!-- frontiere du cluster -->
+                <rect class="zone" x="210" y="20" width="670" height="400" rx="16" />
+                <text class="zlbl" x="228" y="42">KUBERNETES</text>
+
+                <!-- entree -->
+                <rect class="node" x="24" y="180" width="140" height="56" rx="10" />
+                <text class="lbl" x="94" y="206" text-anchor="middle">Client</text>
+                <text class="sub" x="94" y="224" text-anchor="middle">navigateur</text>
+
+                <rect class="node-a" x="250" y="58" width="150" height="56" rx="10" />
+                <text class="lbl" x="325" y="84" text-anchor="middle">Keycloak</text>
+                <text class="sub" x="325" y="102" text-anchor="middle">SSO · OAuth2</text>
+
+                <rect class="node-a" x="250" y="180" width="150" height="56" rx="10" />
+                <text class="lbl" x="325" y="206" text-anchor="middle">Passerelle API</text>
+                <text class="sub" x="325" y="224" text-anchor="middle">Spring Cloud Gateway</text>
+
+                <!-- microservices -->
+                <rect class="node" x="460" y="58" width="150" height="54" rx="10" />
+                <text class="lbl" x="535" y="83" text-anchor="middle">Dotations</text>
+                <text class="sub" x="535" y="100" text-anchor="middle">Spring Boot</text>
+
+                <rect class="node" x="460" y="155" width="150" height="54" rx="10" />
+                <text class="lbl" x="535" y="180" text-anchor="middle">RH</text>
+                <text class="sub" x="535" y="197" text-anchor="middle">Spring Boot</text>
+
+                <rect class="node" x="460" y="252" width="150" height="54" rx="10" />
+                <text class="lbl" x="535" y="277" text-anchor="middle">Documents</text>
+                <text class="sub" x="535" y="294" text-anchor="middle">Spring Boot</text>
+
+                <!-- bus d'evenements -->
+                <rect class="node-a" x="672" y="58" width="52" height="248" rx="10" />
+                <text class="lbl" x="698" y="182" text-anchor="middle" transform="rotate(-90 698 182)">Kafka</text>
+
+                <!-- persistance -->
+                <rect class="node" x="460" y="345" width="150" height="56" rx="10" />
+                <text class="lbl" x="535" y="371" text-anchor="middle">PostgreSQL</text>
+                <text class="sub" x="535" y="389" text-anchor="middle">une base par service</text>
+
+                <rect class="node" x="700" y="345" width="160" height="56" rx="10" />
+                <text class="lbl" x="780" y="371" text-anchor="middle">ETL Python</text>
+                <text class="sub" x="780" y="389" text-anchor="middle">Pandas · planifié</text>
+
+                <!-- liens -->
+                <path class="sync" marker-end="url(#d2s)" d="M 168 208 H 242" />
+
+                <path class="sync" marker-end="url(#d2s)" d="M 325 118 V 174" />
+                <text class="elbl" x="336" y="152">OAuth2 / JWT</text>
+
+                <path class="sync" d="M 404 208 H 430" />
+                <path class="sync" marker-end="url(#d2s)" d="M 430 208 V 85 H 452" />
+                <path class="sync" marker-end="url(#d2s)" d="M 430 208 H 452" />
+                <path class="sync" marker-end="url(#d2s)" d="M 430 208 V 279 H 452" />
+
+                <path class="async" marker-start="url(#d2a)" marker-end="url(#d2a)" d="M 618 85 H 664" />
+                <path class="async" marker-start="url(#d2a)" marker-end="url(#d2a)" d="M 618 182 H 664" />
+                <path class="async" marker-start="url(#d2a)" marker-end="url(#d2a)" d="M 618 279 H 664" />
+
+                <path class="flow" marker-end="url(#d2f)" d="M 535 310 V 341" />
+                <text class="elbl" x="546" y="330">Spring Data JPA</text>
+
+                <path class="flow" marker-end="url(#d2f)" d="M 696 373 H 618" />
+
+                <!-- legende -->
+                <path class="sync" d="M 24 441 H 58" />
+                <text class="elbl" x="66" y="445">synchrone — REST / OpenFeign</text>
+                <path class="async" d="M 300 441 H 334" />
+                <text class="elbl" x="342" y="445">asynchrone — Kafka (événements)</text>
+                </svg>
+              </div>
+              <figcaption>
+                <span data-l="fr">Sécurité centralisée en périphérie, découplage des services par le bus d'événements, et une base par service pour éviter le couplage par la donnée.</span>
+                <span data-l="en">Centralised security at the edge, service decoupling through the event bus, and one database per service to avoid coupling through data.</span>
+              </figcaption>
+            </figure>
+
             <ul class="card__list">
               <li data-l="fr">Architecture <strong>microservices</strong> générée et industrialisée avec JHipster.</li>
               <li data-l="en"><strong>Microservice</strong> architecture generated and industrialised with JHipster.</li>
@@ -507,7 +666,7 @@
             </div>
           </article>
 
-          <article class="card reveal">
+          <article class="card card--wide reveal">
             <div class="card__top">
               <div class="card__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v6.3L4.6 17a2 2 0 0 0 1.7 3h11.4a2 2 0 0 0 1.7-3L14 8.3V2"/><path d="M8.5 2h7"/><path d="M7 14h10"/></svg></div>
               <span class="tag"><span data-l="fr">Production</span><span data-l="en">Production</span></span>
@@ -517,6 +676,54 @@
               <span data-l="en">Ethypharm medication management platform</span>
             </h3>
             <p class="card__meta">Java / Spring Boot · Python</p>
+
+            <figure class="diagram">
+              <div class="diagram__scroll">
+                <svg viewBox="0 0 760 330" role="img" aria-labelledby="d3t d3d">
+                <title id="d3t">Boucle de prévision des stocks Ethypharm</title>
+                <desc id="d3d">Les microservices enregistrent les mouvements de stock dans PostgreSQL ; un modèle prédictif Python s'entraîne sur cet historique et produit des prévisions de réapprovisionnement, exposées en retour par l'API.</desc>
+
+                <defs>
+                  <marker id="d3s" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                    <path d="M0 0 L10 5 L0 10 z" fill="var(--accent)" />
+                  </marker>
+                </defs>
+
+                <rect class="node-a" x="40" y="36" width="250" height="72" rx="12" />
+                <text class="lbl" x="165" y="68" text-anchor="middle">Microservices</text>
+                <text class="sub" x="165" y="88" text-anchor="middle">Spring Boot · JHipster</text>
+
+                <rect class="node" x="470" y="36" width="250" height="72" rx="12" />
+                <text class="lbl" x="595" y="68" text-anchor="middle">PostgreSQL</text>
+                <text class="sub" x="595" y="88" text-anchor="middle">historique des stocks</text>
+
+                <rect class="node-a" x="470" y="220" width="250" height="72" rx="12" />
+                <text class="lbl" x="595" y="252" text-anchor="middle">Modèle prédictif</text>
+                <text class="sub" x="595" y="272" text-anchor="middle">Scikit-learn · Pandas</text>
+
+                <rect class="node" x="40" y="220" width="250" height="72" rx="12" />
+                <text class="lbl" x="165" y="252" text-anchor="middle">Prévision de réappro.</text>
+                <text class="sub" x="165" y="272" text-anchor="middle">seuils et quantités</text>
+
+                <path class="sync" marker-end="url(#d3s)" d="M 294 72 H 462" />
+                <text class="elbl" x="378" y="62" text-anchor="middle">mouvements de stock</text>
+
+                <path class="sync" marker-end="url(#d3s)" d="M 595 112 V 212" />
+                <text class="elbl" x="606" y="166">entraînement</text>
+
+                <path class="sync" marker-end="url(#d3s)" d="M 466 256 H 298" />
+                <text class="elbl" x="382" y="246" text-anchor="middle">prévisions</text>
+
+                <path class="sync" marker-end="url(#d3s)" d="M 165 216 V 116" />
+                <text class="elbl" x="154" y="166" text-anchor="end">exposées par l'API</text>
+              </svg>
+              </div>
+              <figcaption>
+                <span data-l="fr">Le modèle se nourrit de la donnée produite par les services, et ses prévisions repartent dans le même circuit : la boucle est fermée, sans export manuel.</span>
+                <span data-l="en">The model feeds on data produced by the services, and its forecasts flow back through the same circuit: a closed loop, with no manual export.</span>
+              </figcaption>
+            </figure>
+
             <ul class="card__list">
               <li data-l="fr">Architecture <strong>microservices</strong> avec JHipster.</li>
               <li data-l="en"><strong>Microservice</strong> architecture with JHipster.</li>

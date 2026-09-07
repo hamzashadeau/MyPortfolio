@@ -129,7 +129,10 @@
       entries.forEach(function (entry, i) {
         if (!entry.isIntersecting) return;
         var el = entry.target;
-        setTimeout(function () { el.classList.add("is-in"); }, i * 70);
+        // `i` est l'index dans le lot courant : sur un ecran tres haut, tous les
+        // elements entrent d'un coup et le dernier attendrait plusieurs secondes.
+        // On plafonne le decalage a 5 crans.
+        setTimeout(function () { el.classList.add("is-in"); }, Math.min(i, 5) * 70);
         io.unobserve(el);
       });
     }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
