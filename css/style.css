@@ -578,6 +578,40 @@ html[data-lang="en"] [data-l="fr"] { display: none !important; }
 }
 .tl__list li strong { color: var(--text); font-weight: 600; }
 
+/* ---------- 10 bis. Activite de developpement (capture) ---------- */
+.activity {
+  margin: clamp(40px, 5vw, 60px) 0 0;
+  padding-top: clamp(30px, 4vw, 42px);
+  border-top: 1px solid var(--border-soft);
+}
+.activity__head { margin-bottom: 20px; max-width: 680px; }
+.activity__head h3 {
+  font-size: clamp(17px, 2.2vw, 20px);
+  letter-spacing: -0.02em;
+  margin-bottom: 10px;
+}
+.activity__head p { color: var(--muted); font-size: 15.4px; }
+
+/* Capture d'ecran claire posee sur un fond sombre : on l'encadre pour qu'elle
+   se lise comme un document rapporte, et non comme un trou dans la page. */
+.shot {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.shot__scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 700px;      /* en dessous, les cases du graphique sont illisibles */
+}
+
 /* ---------- 11. Projets ---------- */
 /* 400px de minimum : au-dela de deux colonnes, les cartes portant un schema
    deviennent trop etroites pour le lire.

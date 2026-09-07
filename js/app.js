@@ -42,6 +42,11 @@
       el.setAttribute("placeholder", el.getAttribute("data-ph-" + lang));
     });
 
+    // Textes alternatifs des images : eux aussi doivent suivre la langue.
+    document.querySelectorAll("[data-alt-" + lang + "]").forEach(function (el) {
+      el.setAttribute("alt", el.getAttribute("data-alt-" + lang));
+    });
+
     try { localStorage.setItem("portfolio-lang", lang); } catch (e) { /* stockage indisponible */ }
   }
 
