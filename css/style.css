@@ -881,6 +881,13 @@ html[data-lang="en"] [data-l="fr"] { display: none !important; }
   background: rgba(248, 113, 113, 0.10);
   border-color: rgba(248, 113, 113, 0.32);
 }
+.form__status a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  white-space: nowrap;
+}
 
 /* ---------- 14. Pied de page ---------- */
 .footer {

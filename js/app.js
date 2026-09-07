@@ -147,6 +147,8 @@
 
   /* ---------- 5. Formulaire de contact (Netlify Forms, en AJAX) ---------- */
 
+  var MAIL = "bouigrouanehamza@gmail.com";
+
   var MSG = {
     sending: { fr: "Envoi en cours…", en: "Sending…" },
     ok: {
@@ -154,8 +156,12 @@
       en: "Message sent. I'll get back to you within 48 hours."
     },
     ko: {
-      fr: "L'envoi a échoué. Écrivez-moi directement à bouigrouanehamza@gmail.com.",
-      en: "Sending failed. Please email me directly at bouigrouanehamza@gmail.com."
+      fr: "L'envoi a échoué.",
+      en: "Sending failed."
+    },
+    koLink: {
+      fr: "Ouvrir dans ma messagerie",
+      en: "Open in my mail app"
     }
   };
 
@@ -186,6 +192,17 @@
       say("sending", null);
       if (submit) submit.disabled = true;
 
+      // Valeurs lues avant l'envoi : en cas d'echec, form.reset() aura pu
+      // vider les champs et le lien de repli doit rester complet.
+      var f = form.elements;
+      var lang = root.getAttribute("data-lang") === "en" ? "en" : "fr";
+      var saisie = {
+        nom: f.name.value.trim(),
+        email: f.email.value.trim(),
+        sujet: f.subject.value.trim(),
+        message: f.message.value.trim()
+      };
+
       // Netlify attend un corps url-encode contenant form-name, poste sur la page.
       var body = new URLSearchParams(new FormData(form)).toString();
 
@@ -201,10 +218,28 @@
         })
         .catch(function () {
           say("ko", "ko");
+
+          // On ne perd pas ce que le visiteur a ecrit : on lui propose un lien
+          // pre-rempli vers sa propre messagerie.
+          var sujet = saisie.sujet || (lang === "fr"
+            ? "Prise de contact via le portfolio"
+            : "Contact from the portfolio");
+          var corps = (lang === "fr" ? "De" : "From") +
+            " : " + saisie.nom + " <" + saisie.email + ">\n\n" + saisie.message;
+
+          var a = document.createElement("a");
+          a.href = "mailto:" + MAIL +
+            "?subject=" + encodeURIComponent(sujet) +
+            "&body=" + encodeURIComponent(corps);
+          a.textContent = MSG.koLink[lang] || MSG.koLink.fr;
+
+          status.appendChild(document.createTextNode(" "));
+          status.appendChild(a);
         })
-        .then(function () {
-          if (submit) submit.disabled = false;
-        });
+        .then(
+          function () { if (submit) submit.disabled = false; },
+          function () { if (submit) submit.disabled = false; }
+        );
     });
   }
 
