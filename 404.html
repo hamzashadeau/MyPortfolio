@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page introuvable — Bouigrouane Hamza</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#080b11" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/image/apple-touch-icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/css/style.css" />
+
+  <style>
+    .oops {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      padding: 40px 0;
+    }
+    .oops__code {
+      font-family: var(--mono);
+      font-size: clamp(72px, 18vw, 168px);
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin-bottom: 18px;
+    }
+    .oops h1 {
+      font-size: clamp(24px, 4vw, 36px);
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+    .oops p {
+      color: var(--muted);
+      max-width: 460px;
+      margin: 0 auto 32px;
+    }
+    .oops .hero__cta { justify-content: center; }
+  </style>
+</head>
+
+<body>
+  <section class="oops">
+    <div class="hero__bg"></div>
+    <div class="hero__grid"></div>
+
+    <div class="wrap" style="position: relative; z-index: 1;">
+      <p class="oops__code grad">404</p>
+
+      <h1>
+        <span data-l="fr">Cette page n'existe pas</span>
+        <span data-l="en">This page doesn't exist</span>
+      </h1>
+
+      <p>
+        <span data-l="fr">Le lien est peut-être erroné ou la page a été déplacée. Le portfolio, lui, est toujours là.</span>
+        <span data-l="en">The link may be wrong, or the page has moved. The portfolio itself is still here.</span>
+      </p>
+
+      <div class="hero__cta">
+        <a class="btn btn--primary" href="/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 10 9-7 9 7v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M9 21v-8h6v8"/></svg>
+          <span data-l="fr">Retour à l'accueil</span><span data-l="en">Back to home</span>
+        </a>
+        <a class="btn btn--ghost" href="mailto:bouigrouanehamza@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          <span data-l="fr">Me contacter</span><span data-l="en">Get in touch</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

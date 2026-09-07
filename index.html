@@ -7,16 +7,74 @@
   <meta name="description" content="Ingénieur développeur Java / Python, 4 ans d'expérience. APIs sécurisées à fort trafic (50 000+ utilisateurs), architecture microservices, data science et agents IA." />
   <meta name="author" content="Bouigrouane Hamza" />
   <meta name="theme-color" content="#080b11" />
+  <link rel="canonical" href="https://hbouigrouane-portfolio.netlify.app/" />
 
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="image/apple-touch-icon.png" />
+
+  <!-- Aperçu au partage. Les URL doivent être absolues : les robots de LinkedIn,
+       WhatsApp et X ne résolvent pas les chemins relatifs. -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Bouigrouane Hamza" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://hbouigrouane-portfolio.netlify.app/" />
   <meta property="og:title" content="Bouigrouane Hamza — Ingénieur Développeur Java / Python" />
-  <meta property="og:description" content="APIs sécurisées à fort trafic, architecture microservices, data science et agents IA." />
-  <meta property="og:image" content="image/ma photo1.png" />
+  <meta property="og:description" content="APIs sécurisées à fort trafic (50 000+ utilisateurs), architecture microservices, data science et agents IA." />
+  <meta property="og:image" content="https://hbouigrouane-portfolio.netlify.app/image/og-card.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Bouigrouane Hamza — Ingénieur Développeur Java / Python" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bouigrouane Hamza — Ingénieur Développeur Java / Python" />
+  <meta name="twitter:description" content="APIs sécurisées à fort trafic (50 000+ utilisateurs), architecture microservices, data science et agents IA." />
+  <meta name="twitter:image" content="https://hbouigrouane-portfolio.netlify.app/image/og-card.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Données structurées : ce que les moteurs lisent pour un profil professionnel. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bouigrouane Hamza",
+    "givenName": "Hamza",
+    "familyName": "Bouigrouane",
+    "jobTitle": "Ingénieur Développeur Java / Python",
+    "description": "Ingénieur développeur Java/Python avec 4 ans d'expérience, spécialisé dans la conception d'APIs sécurisées à fort trafic et l'architecture microservices.",
+    "url": "https://hbouigrouane-portfolio.netlify.app/",
+    "image": "https://hbouigrouane-portfolio.netlify.app/image/og-card.png",
+    "email": "mailto:bouigrouanehamza@gmail.com",
+    "telephone": "+212706019991",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Marrakech",
+      "addressCountry": "MA"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/hamza-bouigrouane",
+      "https://github.com/hamzashadeau"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Efficience Développement"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Université Cadi Ayyad — Faculté des Sciences et Techniques, Marrakech"
+    },
+    "knowsLanguage": ["ar", "fr", "en"],
+    "knowsAbout": [
+      "Java", "Python", "Spring Boot", "FastAPI", "Microservices",
+      "Apache Kafka", "Keycloak", "OAuth2", "Docker", "Kubernetes",
+      "PostgreSQL", "MongoDB", "Data Science", "ETL"
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -142,7 +200,11 @@
 
         <div class="about">
           <div class="photo reveal">
-            <img src="image/ma photo1.png" alt="Bouigrouane Hamza" loading="lazy" />
+            <picture>
+              <source srcset="image/hamza-bouigrouane.webp" type="image/webp" />
+              <img src="image/hamza-bouigrouane.jpg" width="504" height="630"
+                   alt="Bouigrouane Hamza" loading="lazy" decoding="async" />
+            </picture>
           </div>
 
           <div class="about__body reveal">
@@ -636,7 +698,12 @@
             </a>
           </div>
 
-          <form class="form reveal" id="contactForm" novalidate>
+          <!-- Traitement par Netlify Forms : les messages arrivent dans le tableau
+               de bord Netlify, sans backend ni service tiers. -->
+          <form class="form reveal" id="contactForm" name="contact" method="POST"
+                data-netlify="true" data-netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="contact" />
+            <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off" /></label></p>
             <div class="field">
               <label for="cf-name"><span data-l="fr">Nom complet</span><span data-l="en">Full name</span></label>
               <input type="text" id="cf-name" name="name" required
@@ -661,14 +728,16 @@
                         data-ph-fr="Parlez-moi de votre besoin…" data-ph-en="Tell me about your need…"></textarea>
             </div>
 
-            <button type="submit" class="btn btn--primary">
+            <button type="submit" class="btn btn--primary" id="cf-submit">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
               <span data-l="fr">Envoyer le message</span><span data-l="en">Send message</span>
             </button>
 
+            <p class="form__status" id="cf-status" role="status" aria-live="polite" hidden></p>
+
             <p class="form__note">
-              <span data-l="fr">Le formulaire ouvre votre logiciel de messagerie avec le message pré-rempli.</span>
-              <span data-l="en">The form opens your mail client with the message pre-filled.</span>
+              <span data-l="fr">Ou écrivez-moi directement à <a href="mailto:bouigrouanehamza@gmail.com">bouigrouanehamza@gmail.com</a>.</span>
+              <span data-l="en">Or email me directly at <a href="mailto:bouigrouanehamza@gmail.com">bouigrouanehamza@gmail.com</a>.</span>
             </p>
           </form>
 

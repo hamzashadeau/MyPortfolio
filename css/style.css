@@ -15,8 +15,8 @@
 
   --text:        #e8eef6;
   --text-strong: #ffffff;
-  --muted:       #93a4b8;
-  --muted-2:     #64748b;
+  --muted:       #93a4b8;  /* 7,7:1 sur --bg */
+  --muted-2:     #8493a5;  /* 6,3:1 sur --bg — l'ancien #64748b tombait a 4,1:1, sous le seuil AA */
 
   --accent:      #38bdf8;
   --accent-2:    #818cf8;
@@ -429,8 +429,10 @@ html[data-lang="en"] [data-l="fr"] { display: none !important; }
   background: var(--surface);
   box-shadow: var(--shadow-lg);
 }
+.photo picture { display: block; }
 .photo img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center top;
@@ -759,7 +761,39 @@ html[data-lang="en"] [data-l="fr"] { display: none !important; }
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 .form .btn { width: 100%; }
+.form .btn[disabled] { opacity: 0.6; cursor: progress; transform: none; }
 .form__note { font-size: 12.6px; color: var(--muted-2); text-align: center; }
+.form__note a { color: var(--accent); text-decoration: underline; text-underline-offset: 2px; }
+
+/* Piege a robots : masque a l'oeil, mais pas via display:none, que certains
+   robots detectent et contournent. */
+.hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.form__status {
+  font-size: 14px;
+  text-align: center;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+.form__status[data-state="ok"] {
+  color: #6ee7b7;
+  background: rgba(52, 211, 153, 0.10);
+  border-color: rgba(52, 211, 153, 0.32);
+}
+.form__status[data-state="ko"] {
+  color: #fca5a5;
+  background: rgba(248, 113, 113, 0.10);
+  border-color: rgba(248, 113, 113, 0.32);
+}
 
 /* ---------- 14. Pied de page ---------- */
 .footer {

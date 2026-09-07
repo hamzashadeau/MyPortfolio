@@ -137,9 +137,34 @@
     reveals.forEach(function (el) { io.observe(el); });
   }
 
-  /* ---------- 5. Formulaire de contact (mailto) ---------- */
+  /* ---------- 5. Formulaire de contact (Netlify Forms, en AJAX) ---------- */
+
+  var MSG = {
+    sending: { fr: "Envoi en cours…", en: "Sending…" },
+    ok: {
+      fr: "Message envoyé. Je vous réponds sous 48 h.",
+      en: "Message sent. I'll get back to you within 48 hours."
+    },
+    ko: {
+      fr: "L'envoi a échoué. Écrivez-moi directement à bouigrouanehamza@gmail.com.",
+      en: "Sending failed. Please email me directly at bouigrouanehamza@gmail.com."
+    }
+  };
 
   var form = document.getElementById("contactForm");
+  var status = document.getElementById("cf-status");
+  var submit = document.getElementById("cf-submit");
+
+  function say(key, state) {
+    if (!status) return;
+    status.textContent = MSG[key][root.getAttribute("data-lang")] || MSG[key].fr;
+    if (state) {
+      status.setAttribute("data-state", state);
+    } else {
+      status.removeAttribute("data-state");
+    }
+    status.hidden = false;
+  }
 
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -150,25 +175,28 @@
         return;
       }
 
-      // `form.name` designe l'attribut name du formulaire : on passe par elements.
-      var f = form.elements;
-      var lang = root.getAttribute("data-lang");
-      var name = f.name.value.trim();
-      var email = f.email.value.trim();
-      var subject = f.subject.value.trim();
-      var message = f.message.value.trim();
+      say("sending", null);
+      if (submit) submit.disabled = true;
 
-      var fallback = lang === "fr" ? "Prise de contact via le portfolio" : "Contact from the portfolio";
-      var from = lang === "fr" ? "De" : "From";
+      // Netlify attend un corps url-encode contenant form-name, poste sur la page.
+      var body = new URLSearchParams(new FormData(form)).toString();
 
-      var body =
-        from + " : " + name + " <" + email + ">\n\n" +
-        message;
-
-      window.location.href =
-        "mailto:bouigrouanehamza@gmail.com" +
-        "?subject=" + encodeURIComponent(subject || fallback) +
-        "&body=" + encodeURIComponent(body);
+      fetch(form.getAttribute("action") || window.location.pathname, {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          form.reset();
+          say("ok", "ok");
+        })
+        .catch(function () {
+          say("ko", "ko");
+        })
+        .then(function () {
+          if (submit) submit.disabled = false;
+        });
     });
   }
 

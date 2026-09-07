@@ -1,0 +1,23 @@
+# En-têtes Netlify — https://docs.netlify.com/routing/headers/
+
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+
+# Images : contenu stable, cache long.
+/image/*
+  Cache-Control: public, max-age=2592000
+
+# Feuilles de style et scripts : cache court, sinon une mise à jour du site
+# reste invisible pour les visiteurs de retour (les noms de fichiers ne sont
+# pas versionnés par un hash).
+/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/js/*
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/CV_Bouigrouane_Hamza.pdf
+  Cache-Control: public, max-age=86400

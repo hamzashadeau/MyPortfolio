@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hbouigrouane-portfolio.netlify.app/sitemap.xml
